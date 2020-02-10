@@ -6,11 +6,11 @@ import data_hub
 import saver
 
 class App:
-    def __init__(self, data_hub, saver):
+    def __init__(self, config_file, data_hub, saver):
         if not os.path.exists("data"):
             os.makedirs("data")
 
-        configs = get_configs_from()
+        configs = get_configs_from(config_file)
         self.data_hub = data_hub
         self.saver = saver
         self.time_frame_size = configs["time_frame_size"]
@@ -67,5 +67,5 @@ if __name__ == "__main__":
     data_hub = data_hub.DataHub()
     saver = saver.Saver('data/dataset.csv')
 
-    app = App(data_hub, saver)
+    app = App("config.json", data_hub, saver)
     asyncio.run(app.execute())
