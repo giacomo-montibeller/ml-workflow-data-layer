@@ -1,10 +1,10 @@
 import unittest
 import datetime as dt
-import app
+import main
 
-class AppTest(unittest.TestCase):
+class MainTest(unittest.TestCase):
     def test_configs_extraction(self):
-        configs = app.get_configs_from("test_config.json")
+        configs = main.get_configs_from("test_config.json")
 
         self.assertEqual(configs["category"], "category")
         self.assertEqual(configs["data_type"], "data type")
@@ -17,14 +17,14 @@ class AppTest(unittest.TestCase):
         time_to = dt.datetime(2020, 1, 31)
         time_frame_size = 2
 
-        time_frames = app.time_frames_from(time_from, time_to, time_frame_size)
+        time_frames = main.time_frames_from(time_from, time_to, time_frame_size)
 
         self.assertEqual(16, len(time_frames))
 
     def test_date_from_string(self):
         date_as_string = "2020-02-01"
 
-        parsed_date = app.date_from(date_as_string)
+        parsed_date = main.date_from(date_as_string)
 
         self.assertEqual(2020, parsed_date.year)
         self.assertEqual(2, parsed_date.month)

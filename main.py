@@ -5,7 +5,7 @@ import datetime as dt
 import data_hub
 import saver
 
-class App:
+class Main:
     def __init__(self, config_file, data_hub, saver):
         if not os.path.exists("data"):
             os.makedirs("data")
@@ -67,5 +67,5 @@ if __name__ == "__main__":
     data_hub = data_hub.DataHub()
     saver = saver.Saver('data/dataset.csv')
 
-    app = App("config.json", data_hub, saver)
+    app = Main("config.json", data_hub, saver)
     asyncio.run(app.execute())
