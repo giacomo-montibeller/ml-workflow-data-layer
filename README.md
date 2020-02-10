@@ -27,3 +27,17 @@ DVC supports these types of remote:
 * `dvc add /data/path`: to add files under DVC control
 * `dvc push`: to upload data to remote storage
 * `dvc pull`: to download data from remote storage, can be used after a `git pull` or `git checkout`
+
+### Run tests
+
+To run all the tests run the following command:
+
+`python3 -m unittest test_*.py`
+
+To run just the unit tests run the following command:
+
+`python3 -m unittest test_unit_*.py`
+
+To run just the integration tests run the following command:
+
+`python3 -m unittest test_integration_*.py`
