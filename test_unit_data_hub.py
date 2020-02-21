@@ -2,7 +2,7 @@ import unittest
 import data_hub
 
 class DataHubTest(unittest.TestCase):
-    def test_valid_location(self):
+    def test_assert_true_if_valid_location(self):
         latitude = 46.48
         longitude = 11.30
         station = {"latitude": latitude, "longitude": longitude}
@@ -11,7 +11,7 @@ class DataHubTest(unittest.TestCase):
 
         self.assertEqual(True, is_valid_location)
 
-    def test_invalid_location(self):
+    def test_assert_false_if_invalid_location(self):
         latitude = 40
         longitude = 20
         station = {"latitude": latitude, "longitude": longitude}
@@ -20,7 +20,7 @@ class DataHubTest(unittest.TestCase):
 
         self.assertEqual(False, is_valid_location)
 
-    def test_url_for_category_and_operation(self):
+    def test_build_url(self):
         category = "any_category"
         operation = "any_operation"
         query_string = "any_query_string"

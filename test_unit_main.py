@@ -3,7 +3,7 @@ import datetime as dt
 import main
 
 class MainTest(unittest.TestCase):
-    def test_configs_extraction(self):
+    def test_extract_configs(self):
         configs = main.get_configs_from("test_config.json")
 
         self.assertEqual(configs["category"], "category")
@@ -12,7 +12,7 @@ class MainTest(unittest.TestCase):
         self.assertEqual(configs["time_to"], "2020-01-05")
         self.assertEqual(configs["time_frame_size"], 1)
 
-    def test_time_framer(self):
+    def test_split_time_in_frames(self):
         time_from = dt.datetime(2020, 1, 1)
         time_to = dt.datetime(2020, 1, 31)
         time_frame_size = 2
@@ -21,7 +21,7 @@ class MainTest(unittest.TestCase):
 
         self.assertEqual(16, len(time_frames))
 
-    def test_date_from_string(self):
+    def test_parse_date_from_string(self):
         date_as_string = "2020-02-01"
 
         parsed_date = main.date_from(date_as_string)

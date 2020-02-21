@@ -2,7 +2,7 @@ import unittest
 import saver as sv
 
 class SaverTest(unittest.TestCase):
-    def test_hour_from_timestamp(self):
+    def test_get_hours_from_timestamp(self):
         timestamp = 1577872800000
 
         hours = sv.hour_from_timestamp(timestamp)
